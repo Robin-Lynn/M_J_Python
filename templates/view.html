@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User List</title>
+    <style>
+        /* ဇယားကွက် တစ်ခုလုံးရဲ့ ပုံစံ */
+        table { 
+            border-collapse: collapse; 
+            width: 80%; 
+            margin: 30px auto; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* အရိပ်လေး ထည့်ထားတာ */
+        }
+        
+        /* ခေါင်းစဉ်တန်း (Header) ကို အစိမ်းရောင်လေး ပေးမယ် */
+        th { 
+            background-color: #4CAF50; 
+            color: white; 
+            padding: 15px;
+            text-align: left;
+        }
+
+        /* အကွက်လေးတွေရဲ့ ပုံစံ */
+        td { 
+            border: 1px solid #ddd; 
+            padding: 12px; 
+        }
+
+        /* တစ်ကြောင်းကျော် အရောင်မတူအောင် လုပ်တာ (Zebra Stripes) */
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        tr:hover { background-color: #f1f1f1; } /* Mouse တင်ရင် အရောင်ပြောင်းမယ် */
+
+        h2 { text-align: center; color: #333; margin-top: 40px; }
+        
+        .btn {
+            display: block;
+            width: 150px;
+            margin: 20px auto;
+            text-align: center;
+            padding: 10px;
+            background-color: #008CBA;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>သိမ်းဆည်းထားသော အမည်စာရင်းများ</h2>
+
+    <table>
+        <tr>
+            <th>ID (စဉ်)</th>
+            <th>အမည်</th>
+            <th>အီးမေးလ်</th>
+        </tr>
+        
+        {% for user in users %}
+        <tr>
+            <td>{{ user[0] }}</td>
+            <td>{{ user[1] }}</td>
+            <td>{{ user[2] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <a href="/" class="btn">အသစ်ထည့်ရန်</a>
+
+</body>
+</html>
